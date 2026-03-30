@@ -65,3 +65,43 @@ body {
     margin-top: 15px; padding: 15px; background: rgba(8, 27, 41, 0.5);
     border-radius: 10px; border: 1px dashed #00abf0; text-align: center;
 }
+/* --- STYLE UNTUK HOME --- */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 10% 0; /* Jarak dari header */
+    gap: 50px;
+}
+
+.home-content h1 { font-size: 50px; color: #00abf0; }
+.home-content h3 { font-size: 24px; margin-bottom: 15px; }
+.home-content p { line-height: 1.6; margin-bottom: 25px; }
+
+.avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #00abf0;
+    box-shadow: 0 0 20px #00abf0;
+    object-fit: cover;
+}
+
+/* --- STYLE UNTUK ABOUT --- */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px; /* Jarak dari header */
+}
+
+.about-details p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    border-bottom: 1px solid rgba(0, 171, 240, 0.2);
+    padding-bottom: 5px;
+}
+
+.btn-box { display: flex; gap: 15px; }
+.btn-outline { background: transparent; color: #00abf0; border: 2px solid #00abf0; }
