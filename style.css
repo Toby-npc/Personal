@@ -1,10 +1,10 @@
- {
+* {
     margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #081b29; color: #ededed; overflow-x: hidden;
+    background: #081b29; color: #ededed;
 }
 
 .header {
@@ -20,18 +20,18 @@ body {
 
 .tools-container {
     display: flex; flex-direction: column; align-items: center;
-    padding: 130px 10% 60px; gap: 40px; min-height: 100vh;
+    padding: 140px 10% 60px; gap: 40px; min-height: 100vh;
 }
 
 .tool-card {
     background: #112e42; border: 2px solid #00abf0;
-    border-radius: 20px; padding: 30px; width: 100%; max-width: 450px;
-    box-shadow: 0 0 15px rgba(0, 171, 240, 0.3); transition: 0.3s;
+    border-radius: 20px; padding: 30px; width: 100%; max-width: 420px;
+    box-shadow: 0 0 20px rgba(0, 171, 240, 0.4);
 }
 
-.tool-card:hover { transform: translateY(-5px); box-shadow: 0 0 25px #00abf0; }
-.tool-title { color: #00abf0; text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+.tool-title { color: #00abf0; text-align: center; margin-bottom: 20px; text-transform: uppercase; }
 
+/* Kalkulator Design */
 .calc-screen {
     width: 100%; background: #081b29; border: 1px solid #00abf0;
     color: #00abf0; padding: 20px; border-radius: 10px;
@@ -45,29 +45,23 @@ body {
     font-weight: 600; cursor: pointer; transition: 0.2s; background: #00abf0; color: #081b29;
 }
 
-.btn-calc:hover { opacity: 0.8; transform: scale(0.95); }
 .btn-red { background: #ff4d4d; color: white; }
 .btn-green { background: #28a745; color: white; grid-row: span 2; }
 .btn-op { background: rgba(0, 171, 240, 0.2); color: #00abf0; border: 1px solid #00abf0; }
 .btn-zero { grid-column: span 2; }
 
-.bmi-input-group { display: flex; gap: 15px; margin-bottom: 20px; }
-.input-box { flex: 1; display: flex; flex-direction: column; gap: 5px; }
-.input-box label { font-size: 0.9rem; color: #00abf0; }
-
-.input-box input {
-    background: #081b29; border: 1px solid #00abf0; color: white;
-    padding: 12px; border-radius: 8px; text-align: center; outline: none;
+/* BMI Design */
+.bmi-input {
+    width: 100%; background: #081b29; border: 1px solid #00abf0;
+    color: white; padding: 12px; border-radius: 8px; margin-bottom: 10px; text-align: center;
 }
 
 .btn-main {
     width: 100%; padding: 15px; background: #00abf0; border: none;
-    border-radius: 10px; color: #081b29; font-weight: 700; cursor: pointer; transition: 0.3s;
+    border-radius: 10px; color: #081b29; font-weight: 700; cursor: pointer;
 }
 
-.btn-main:hover { background: transparent; color: #00abf0; border: 2px solid #00abf0; box-shadow: 0 0 10px #00abf0; }
-
-.bmi-result-box {
-    margin-top: 20px; padding: 20px; background: rgba(8, 27, 41, 0.5);
-    border-radius: 10px; border: 1px dashed #00abf0; text-align: center; min-height: 80px;
+.bmi-result {
+    margin-top: 15px; padding: 15px; background: rgba(8, 27, 41, 0.5);
+    border-radius: 10px; border: 1px dashed #00abf0; text-align: center;
 }
