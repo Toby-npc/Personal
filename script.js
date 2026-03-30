@@ -1,33 +1,49 @@
+const display = document.getElementById('display');
+
 function addToDisplay(value) {
-    document.getElementById('display').value += value;
+    if (display.value === "" && ['+','*','/'].includes(value)) return;
+    display.value += value;
 }
 
 function clearDisplay() {
-    document.getElementById('display').value = "";
+    display.value = "";
 }
 
 function backspace() {
-    let val = document.getElementById('display').value;
-    document.getElementById('display').value = val.slice(0, -1);
+    display.value = display.value.slice(0, -1);
 }
 
 function calculateResult() {
     try {
-        let result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
+        if (display.value === "") return;
+        
+        let result = eval(display.value);
+        
+        display.value = Number.isInteger(result) ? result : result.toFixed(2);
     } catch (e) {
-        alert("Input tidak sah!");
+        alert("Ralat Matematik! Sila semak input anda.");
         clearDisplay();
     }
 }
 
+
 function bmi() {
-    const w = parseFloat(document.getElementById('w').value);
-    const h = parseFloat(document.getElementById('h').value);
-    if (w > 0 && h > 0) {
-        const res = (w / (h * h)).toFixed(1);
-        document.getElementById('res-b').innerText = "BMI: " + res;
+    const weight = parseFloat(document.getElementById('w').value);
+    const height = parseFloat(document.getElementById('h').value);
+    const resElement = document.getElementById('res-b');
+
+    if (weight > 0 && height > 0) {
+        // Peringatan: User perlu masukkan tinggi dalam METER (Contoh: 1.65)
+        const bmiValue = (weight / (height * height)).toFixed(1);
+        
+        let status = "";
+        if (bmiValue < 18.5) status = " (Kurang Berat)";
+        else if (bmiValue < 25) status = " (Normal)";
+        else if (bmiValue < 30) status = " (Lebih Berat)";
+        else status = " (Obesiti)";
+
+        resElement.innerText = "Hasil: " + bmiValue + status;
     } else {
-        alert("Sila masukkan berat dan tinggi!");
+        alert("Sila masukkan Berat (kg) dan Tinggi dalam Meter (Contoh: 1.65)");
     }
 }
