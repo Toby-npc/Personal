@@ -2,7 +2,8 @@
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
-    <title>Tools - Projek DDWD2703</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - Projek Saya</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,25 +18,42 @@
 
     <div class="tools-container">
         <div class="tool-card">
-            <h2>BMI Checker</h2>
-            <input type="number" id="w" placeholder="Berat (kg)">
-            <input type="number" id="h" placeholder="Tinggi (m)">
-            <button class="btn" onclick="bmi()">Kira BMI</button>
-            <p id="res-b" class="res">Hasil: -</p>
+            <h2>Kalkulator Standard</h2>
+            <input type="text" id="display" class="calc-screen" readonly placeholder="0">
+            <div class="calc-buttons">
+                <button class="btn btn-calc" onclick="clearDisplay()" style="background:#ff4d4d">C</button>
+                <button class="btn btn-calc" onclick="addToDisplay('/')">÷</button>
+                <button class="btn btn-calc" onclick="addToDisplay('*')">×</button>
+                <button class="btn btn-calc" onclick="backspace()">←</button>
+                
+                <button class="btn btn-calc" onclick="addToDisplay('7')">7</button>
+                <button class="btn btn-calc" onclick="addToDisplay('8')">8</button>
+                <button class="btn btn-calc" onclick="addToDisplay('9')">9</button>
+                <button class="btn btn-calc" onclick="addToDisplay('-')">-</button>
+                
+                <button class="btn btn-calc" onclick="addToDisplay('4')">4</button>
+                <button class="btn btn-calc" onclick="addToDisplay('5')">5</button>
+                <button class="btn btn-calc" onclick="addToDisplay('6')">6</button>
+                <button class="btn btn-calc" onclick="addToDisplay('+')">+</button>
+                
+                <button class="btn btn-calc" onclick="addToDisplay('1')">1</button>
+                <button class="btn btn-calc" onclick="addToDisplay('2')">2</button>
+                <button class="btn btn-calc" onclick="addToDisplay('3')">3</button>
+                <button class="btn btn-calc" onclick="calculateResult()" style="background:#28a745">=</button>
+                
+                <button class="btn btn-calc" style="grid-column: span 2;" onclick="addToDisplay('0')">0</button>
+                <button class="btn btn-calc" onclick="addToDisplay('.')">.</button>
+            </div>
         </div>
 
         <div class="tool-card">
-            <h2>Kalkulator</h2>
-            <input type="number" id="n1" placeholder="Nombor 1">
-            <input type="number" id="n2" placeholder="Nombor 2">
-            <div style="display:flex; gap:10px; justify-content:center;">
-                <button class="btn" onclick="cal('+')">+</button>
-                <button class="btn" onclick="cal('-')">-</button>
-            </div>
-            <p id="res-c" class="res">Hasil: 0</p>
+            <h2>BMI Checker</h2>
+            <input type="number" id="w" placeholder="Berat (kg)">
+            <input type="number" id="h" placeholder="Tinggi (m) Contoh: 1.65">
+            <button class="btn" style="width:100%" onclick="bmi()">Kira BMI</button>
+            <p id="res-b" class="res">Hasil: -</p>
         </div>
-
-        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
