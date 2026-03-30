@@ -2,8 +2,7 @@
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools - Projek Saya</title>
+    <title>Tools - Projek</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,20 +17,22 @@
 
     <div class="tools-container">
         <div class="tool-card">
-            <h2>Kalkulator</h2>
-            <input type="number" id="n1" placeholder="Nombor 1">
-            <input type="number" id="n2" placeholder="Nombor 2">
-            <button onclick="cal('+')">+</button>
-            <button onclick="cal('-')">-</button>
-            <p id="res-c">Hasil: 0</p>
-        </div>
-
-        <div class="tool-card">
             <h2>BMI Checker</h2>
             <input type="number" id="w" placeholder="Berat (kg)">
             <input type="number" id="h" placeholder="Tinggi (m)">
-            <button onclick="bmi()">Kira</button>
-            <p id="res-b">Hasil: -</p>
+            <button class="btn" onclick="bmi()">Kira BMI</button>
+            <p id="res-b" class="res">Hasil: -</p>
+        </div>
+
+        <div class="tool-card">
+            <h2>Kalkulator</h2>
+            <input type="number" id="n1" placeholder="Nombor 1">
+            <input type="number" id="n2" placeholder="Nombor 2">
+            <div style="display:flex; justify-content:center; gap:10px;">
+                <button class="btn" onclick="cal('+')">+</button>
+                <button class="btn" onclick="cal('-')">-</button>
+            </div>
+            <p id="res-c" class="res">Hasil: 0</p>
         </div>
     </div>
 
