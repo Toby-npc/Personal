@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - Riski Kurniawan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 120px 10% 50px; }
+        .card { background: #112e42; border: 2px solid #00abf0; border-radius: 15px; padding: 20px; box-shadow: 0 0 10px rgba(0,171,240,0.2); }
+        input { width: 100%; padding: 10px; margin: 10px 0; background: #081b29; border: 1px solid #00abf0; color: white; border-radius: 5px; }
+        .btn-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
+        .res { background: rgba(0, 171, 240, 0.1); padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; color: #00abf0; min-height: 40px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Portfolio</a>
+        <nav class="navbar"><a href="index.html">Home</a><a href="Personalinfo.html">About</a><a href="Tools.html" class="active">Tools</a></nav>
+    </header>
 
+    <div class="tools-grid">
+        <div class="card">
+            <h2>Kalkulator</h2>
+            <input type="number" id="n1" placeholder="No 1">
+            <input type="number" id="n2" placeholder="No 2">
+            <div class="btn-grid">
+                <button class="btn" onclick="cal('+')">+</button>
+                <button class="btn" onclick="cal('-')">-</button>
+                <button class="btn" onclick="cal('*')">x</button>
+                <button class="btn" onclick="cal('/')">/</button>
+            </div>
+            <div class="res" id="res-c">Hasil: 0</div>
+        </div>
+
+        <div class="card">
+            <h2>BMI Checker</h2>
+            <input type="number" id="w" placeholder="Berat (kg)">
+            <input type="number" id="h" placeholder="Tinggi (m)">
+            <button class="btn" style="width:100%" onclick="bmi()">Kira BMI</button>
+            <div class="res" id="res-b">Status: -</div>
+        </div>
+
+        <div class="card">
+            <h2>Unit Converter</h2>
+            <input type="number" id="u" placeholder="Masukkan nilai">
+            <div class="btn-grid" style="grid-template-columns: 1fr 1fr;">
+                <button class="btn" onclick="unit('cm-m')">cm to m</button>
+                <button class="btn" onclick="unit('m-cm')">m to cm</button>
+                <button class="btn" onclick="unit('m-km')">m to km</button>
+                <button class="btn" onclick="unit('km-m')">km to m</button>
+            </div>
+            <div class="res" id="res-u">Hasil: 0</div>
+        </div>
+
+        <div class="card">
+            <h2>Zakat Simpanan</h2>
+            <input type="number" id="z" placeholder="Jumlah RM">
+            <button class="btn" style="width:100%" onclick="zakat()">Kira Zakat (2.5%)</button>
+            <div class="res" id="res-z">Zakat: RM 0.00</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
