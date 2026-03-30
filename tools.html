@@ -45,11 +45,10 @@
                 <button class="btn btn-calc" onclick="addToDisplay('.')">.</button>
             </div>
         </div>
-
         <div class="tool-card">
             <h2>BMI Checker</h2>
             <input type="number" id="w" placeholder="Berat (kg)">
-            <input type="number" id="h" placeholder="Tinggi (m) Contoh: 1.65">
+            <input type="number" id="h" step="0.01" placeholder="Tinggi (m) Contoh: 1.65">
             <button class="btn" style="width:100%" onclick="bmi()">Kira BMI</button>
             <p id="res-b" class="res">Hasil: -</p>
         </div>
