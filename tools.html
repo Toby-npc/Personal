@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools - Projek Web</title>
+    <title>Tools - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,21 +48,12 @@
 
         <div class="tool-card">
             <h2 class="tool-title">BMI Checker</h2>
-            <div class="bmi-input-group">
-                <div class="input-box">
-                    <label>Berat (kg)</label>
-                    <input type="number" id="w" placeholder="Cth: 65">
-                </div>
-                <div class="input-box">
-                    <label>Tinggi (m)</label>
-                    <input type="number" id="h" step="0.01" placeholder="Cth: 1.67">
-                </div>
+            <div class="bmi-group">
+                <input type="number" id="w" class="bmi-input" placeholder="Berat (kg)">
+                <input type="number" id="h" class="bmi-input" step="0.01" placeholder="Tinggi (m) Cth: 1.65">
             </div>
             <button class="btn-main" onclick="bmi()">Kira BMI Sekarang</button>
-            
-            <div id="res-b" class="bmi-result-box">
-                <p>Masukkan data di atas untuk melihat status kesihatan anda.</p>
-            </div>
+            <div id="res-b" class="bmi-result">Hasil akan muncul di sini</div>
         </div>
     </div>
 
