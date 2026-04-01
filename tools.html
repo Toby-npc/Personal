@@ -18,29 +18,25 @@
 
     <div class="tools-container">
         <div class="tool-card">
-            <h2 class="tool-title">Kalkulator Standard</h2>
+            <h2 class="tool-title">Calculator</h2>
             <input type="text" id="display" class="calc-screen" value="0" readonly>
             <div class="calc-buttons">
                 <button class="btn-calc btn-red" onclick="clearDisplay()">C</button>
                 <button class="btn-calc btn-op" onclick="addToDisplay('/')">÷</button>
                 <button class="btn-calc btn-op" onclick="addToDisplay('*')">×</button>
                 <button class="btn-calc btn-op" onclick="backspace()">←</button>
-                
                 <button class="btn-calc" onclick="addToDisplay('7')">7</button>
                 <button class="btn-calc" onclick="addToDisplay('8')">8</button>
                 <button class="btn-calc" onclick="addToDisplay('9')">9</button>
                 <button class="btn-calc btn-op" onclick="addToDisplay('-')">-</button>
-                
                 <button class="btn-calc" onclick="addToDisplay('4')">4</button>
                 <button class="btn-calc" onclick="addToDisplay('5')">5</button>
                 <button class="btn-calc" onclick="addToDisplay('6')">6</button>
                 <button class="btn-calc btn-op" onclick="addToDisplay('+')">+</button>
-                
                 <button class="btn-calc" onclick="addToDisplay('1')">1</button>
                 <button class="btn-calc" onclick="addToDisplay('2')">2</button>
                 <button class="btn-calc" onclick="addToDisplay('3')">3</button>
                 <button class="btn-calc btn-green" onclick="calculateResult()">=</button>
-                
                 <button class="btn-calc btn-zero" onclick="addToDisplay('0')">0</button>
                 <button class="btn-calc" onclick="addToDisplay('.')">.</button>
             </div>
@@ -48,12 +44,24 @@
 
         <div class="tool-card">
             <h2 class="tool-title">BMI Checker</h2>
-            <div class="bmi-group">
-                <input type="number" id="w" class="bmi-input" placeholder="Berat (kg)">
-                <input type="number" id="h" class="bmi-input" step="0.01" placeholder="Tinggi (m) Cth: 1.65">
-            </div>
-            <button class="btn-main" onclick="bmi()">Kira BMI Sekarang</button>
-            <div id="res-b" class="bmi-result">Hasil akan muncul di sini</div>
+            <input type="number" id="w" class="tool-input" placeholder="Berat (kg)">
+            <input type="number" id="h" class="tool-input" step="0.01" placeholder="Tinggi (m) Cth: 1.65">
+            <button class="btn-tool" onclick="bmi()">Kira BMI</button>
+            <div id="res-bmi" class="tool-result">Hasil akan muncul di sini</div>
+        </div>
+
+        <div class="tool-card">
+            <h2 class="tool-title">Zakat Calculator</h2>
+            <input type="number" id="income" class="tool-input" placeholder="Simpanan (RM)">
+            <button class="btn-tool" onclick="zakat()">Kira Zakat (2.5%)</button>
+            <div id="res-zakat" class="tool-result">Hasil: RM 0.00</div>
+        </div>
+
+        <div class="tool-card">
+            <h2 class="tool-title">Unit Convertor</h2>
+            <input type="number" id="km" class="tool-input" placeholder="Kilometer (km)">
+            <button class="btn-tool" onclick="convert()">Tukar ke Meter (m)</button>
+            <div id="res-unit" class="tool-result">Hasil: 0 m</div>
         </div>
     </div>
 
