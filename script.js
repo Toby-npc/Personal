@@ -1,16 +1,11 @@
 const display = document.getElementById('display');
 
-function addToDisplay(value) {
-    if (display.value === "0" || display.value === "Error") {
-        display.value = value;
-    } else {
-        display.value += value;
-    }
+function addToDisplay(val) {
+    if (display.value === "0") display.value = val;
+    else display.value += val;
 }
 
-function clearDisplay() {
-    display.value = "0";
-}
+function clearDisplay() { display.value = "0"; }
 
 function backspace() {
     display.value = display.value.slice(0, -1);
@@ -19,29 +14,35 @@ function backspace() {
 
 function calculateResult() {
     try {
-        // eval() mengira string matematik
-        let result = eval(display.value);
-        display.value = Number.isInteger(result) ? result : result.toFixed(2);
-    } catch (e) {
-        display.value = "Error";
-    }
+        let res = eval(display.value);
+        display.value = Number.isInteger(res) ? res : res.toFixed(2);
+    } catch { display.value = "Error"; }
 }
 
 function bmi() {
     const w = parseFloat(document.getElementById('w').value);
     const h = parseFloat(document.getElementById('h').value);
-    const res = document.getElementById('res-b');
-
+    const res = document.getElementById('res-bmi');
     if (w > 0 && h > 0) {
-        const bmiVal = (w / (h * h)).toFixed(1);
-        let status = "";
-        if (bmiVal < 18.5) status = "Kurang Berat";
-        else if (bmiVal < 25) status = "Normal";
-        else if (bmiVal < 30) status = "Lebih Berat";
-        else status = "Obesiti";
+        const val = (w / (h * h)).toFixed(2);
+        res.innerHTML = `BMI: <b>${val}</b>`;
+    }
+}
 
-        res.innerHTML = `<b style="color:#00abf0; font-size:1.5rem;">${bmiVal}</b><br>Status: ${status}`;
-    } else {
-        alert("Sila masukkan berat (kg) dan tinggi dalam meter (cth: 1.65)");
+function zakat() {
+    const inc = parseFloat(document.getElementById('income').value);
+    const res = document.getElementById('res-zakat');
+    if (inc >= 0) {
+        const total = (inc * 0.025).toFixed(2);
+        res.innerHTML = `Zakat: <b>RM ${total}</b>`;
+    }
+}
+
+function convert() {
+    const km = parseFloat(document.getElementById('km').value);
+    const res = document.getElementById('res-unit');
+    if (km >= 0) {
+        const m = km * 1000;
+        res.innerHTML = `Hasil: <b>${m} m</b>`;
     }
 }
